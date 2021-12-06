@@ -1,0 +1,10 @@
+<div
+  cdkDrag
+  *ngFor="let todo of todoList | filter:searchInput.searchInput ; let i = index "
+  class="todo"
+  [class.done] = todo.completed
+  (click)="toggleDone(i)"
+>
+  <div class="content">{{ todo.content }}</div>
+  <button class="delete" (click)="removeTodo(i)">Remove</button>
+</div>
